@@ -1,5 +1,5 @@
 int cols, rows;
-int divider = 10;
+int divider = 5;
 Cube[][] cubes;
 
 void setup () {
@@ -14,7 +14,7 @@ void setup () {
 
   for (int x=0; x < cols; x++) {
     for (int y=0; y < rows; y++) {
-      cubes[x][y] = new Cube(x*cols, y*rows, cols, rows);
+      cubes[x][y] = new Cube(x*cols, y*rows, cols, rows, (x+y)%2);
     }
   }
 }
@@ -27,4 +27,14 @@ void draw () {
       cubes[x][y].show();
     }
   }
+}
+
+void mousePressed() {
+  
+  for (int x=0; x < cols; x++) {
+    for (int y=0; y < rows; y++) {
+      cubes[x][y] = new Cube(x*cols, y*rows, cols, rows, (x+y)%2);
+    }
+  }
+  
 }
