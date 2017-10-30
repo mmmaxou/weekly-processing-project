@@ -1,5 +1,5 @@
 int cols, rows;
-int divider = 5;
+int divider = 10;
 Cube[][] cubes;
 
 void setup () {
@@ -11,10 +11,19 @@ void setup () {
   
   print(cols);
   print(rows);
+  
+  frameRate(0);
 
   for (int x=0; x < cols; x++) {
     for (int y=0; y < rows; y++) {
       cubes[x][y] = new Cube(x*cols, y*rows, cols, rows, (x+y)%2);
+    }
+  }
+  
+  for (int x=0; x < cubes.length; x++) {
+    for (int y=0; y < cubes[x].length; y++) {
+      cubes[x][y].update();
+      cubes[x][y].show();
     }
   }
 }
