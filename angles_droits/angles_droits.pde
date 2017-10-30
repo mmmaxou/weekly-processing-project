@@ -1,5 +1,5 @@
 int cols, rows;
-int divider = 10;
+int divider = 4;
 Cube[][] cubes;
 
 void setup () {
@@ -8,37 +8,16 @@ void setup () {
   cols = width/divider;
   rows = height/divider;
   cubes = new Cube[cols][rows];
-  
-  print(cols);
-  print(rows);
-  
-  frameRate(0);
 
-  for (int x=0; x < cols; x++) {
-    for (int y=0; y < rows; y++) {
-      cubes[x][y] = new Cube(x*cols, y*rows, cols, rows, (x+y)%2);
-    }
-  }
-  
-  for (int x=0; x < cubes.length; x++) {
-    for (int y=0; y < cubes[x].length; y++) {
-      cubes[x][y].update();
-      cubes[x][y].show();
-    }
-  }
+  frameRate(5);
 }
 
 
 void draw () {
-  for (int x=0; x < cubes.length; x++) {
-    for (int y=0; y < cubes[x].length; y++) {
-      cubes[x][y].update();
-      cubes[x][y].show();
-    }
-  }
-}
-
-void mousePressed() {
+  divider++;
+  cols = width/divider;
+  rows = height/divider;
+  cubes = new Cube[cols][rows];
   
   for (int x=0; x < cols; x++) {
     for (int y=0; y < rows; y++) {
@@ -46,4 +25,10 @@ void mousePressed() {
     }
   }
   
+  for (int x=0; x < cubes.length; x++) {
+    for (int y=0; y < cubes[x].length; y++) {
+      cubes[x][y].update();
+      cubes[x][y].show();
+    }
+  }
 }
