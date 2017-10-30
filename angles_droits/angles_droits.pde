@@ -1,10 +1,9 @@
 int cols, rows;
-int divider = 4;
+int divider = 50;
 Cube[][] cubes;
 
 void setup () {
   size(1000, 1000);
-  background(255);
   cols = width/divider;
   rows = height/divider;
   cubes = new Cube[cols][rows];
@@ -14,10 +13,11 @@ void setup () {
 
 
 void draw () {
-  divider++;
+  divider--;
   cols = width/divider;
   rows = height/divider;
   cubes = new Cube[cols][rows];
+  background(255);
   
   for (int x=0; x < cols; x++) {
     for (int y=0; y < rows; y++) {
