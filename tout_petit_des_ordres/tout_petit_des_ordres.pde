@@ -1,7 +1,7 @@
 int cols, rows;
 int divider = 15;
 Tile[][] tiles;
-boolean isRecording = true;
+boolean isRecording = false;
 
 void setup () {
   size(800, 800);
@@ -34,5 +34,5 @@ void draw () {
 }
 
 void mousePressed() {
-  isRecording = false;
+  isRecording = !isRecording;
 }
