@@ -14,7 +14,7 @@ void draw() {
   fill(255, 0, 0);
   strokeWeight(0);
   randomSeed(actualRandomSeed);
-   text("SANS TITRE - Gouache sur Papier de VERA MOLNAR ", 300, 30); 
+  text("SANS TITRE - Gouache sur Papier de VERA MOLNAR ", 300, 30); 
   textAlign(CENTER);
 
 
@@ -35,4 +35,5 @@ void draw() {
 void mousePressed()
 {
   actualRandomSeed = int(random(10000));
+  saveFrame("./images/frame-##.png");
 }
