@@ -22,8 +22,10 @@ class Tile {
 
   void show () {
     noFill();
-    stroke(0);
-    strokeWeight(1);
+    
+    colorMode(HSB, 100);    
+    stroke(map(mouseY, 0, height, 0, 100), 75, 75);
+    strokeWeight(2);
     
     float noiseX = map(noise(xOff), 0, 1, -range, range);
     float noiseY = map(noise(yOff), 0, 1, -range, range);

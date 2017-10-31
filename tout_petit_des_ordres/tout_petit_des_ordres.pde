@@ -22,7 +22,7 @@ void setup () {
 
 
 void draw () {
-  
+  colorMode(RGB, 255);
   background(255);
   for (int x=0; x < tiles.length; x++) {
     for (int y=0; y < tiles[x].length; y++) {
