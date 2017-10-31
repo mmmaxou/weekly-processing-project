@@ -39,7 +39,7 @@ class Cube {
   void show () {
     noFill();
     stroke(0);
-    strokeWeight(1);
+    strokeWeight(2);
 
     drawCenterLines();
     drawBorderLines();

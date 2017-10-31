@@ -1,5 +1,5 @@
 int cols, rows;
-int divider = 50;
+int divider = 5;
 Cube[][] cubes;
 
 void setup () {
@@ -8,12 +8,12 @@ void setup () {
   rows = height/divider;
   cubes = new Cube[cols][rows];
 
-  frameRate(5);
+  frameRate(1);
 }
 
 
 void draw () {
-  divider--;
+  frameRate(0);
   cols = width/divider;
   rows = height/divider;
   cubes = new Cube[cols][rows];
