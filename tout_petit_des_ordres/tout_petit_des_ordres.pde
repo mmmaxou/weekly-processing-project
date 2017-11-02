@@ -1,7 +1,6 @@
 int cols, rows;
 int divider = 15;
 Tile[][] tiles;
-boolean isRecording = false;
 
 void setup () {
   size(800, 800);
@@ -29,10 +28,8 @@ void draw () {
       tiles[x][y].show();
     }
   }
-  if ( isRecording )
-    saveFrame("./video/frame-########.png");
 }
 
 void mousePressed() {
-  isRecording = !isRecording;
+    saveFrame("./images/frame-########.png");
 }
