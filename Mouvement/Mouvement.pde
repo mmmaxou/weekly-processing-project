@@ -47,8 +47,7 @@ void draw() {
     int arrondi = 45;
     arc((size+spacing+4), (randomcircle+120), arrondi, arrondi, PI+(PI/2), PI+(3*(PI)/2), OPEN);
   }
-  if ( isRecording )
-    //saveFrame("./video/frame-########.png");
+  
 }
 
 
