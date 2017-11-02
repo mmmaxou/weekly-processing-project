@@ -1,5 +1,3 @@
-
-
 int spacing=20;
 int actualRandomSeed = 1000;
 float c = cos(random(0, 90));
@@ -35,5 +33,4 @@ void draw() {
 void mousePressed()
 {
   actualRandomSeed = int(random(10000));
-  saveFrame("./images/frame-##.png");
 }
