@@ -37,15 +37,10 @@ class Cube {
   }
 
   void show () {
-    noFill();
-    stroke(0);
-    strokeWeight(2);
 
     drawCenterLines();
     drawBorderLines();
 
-
-    stroke(250, 0, 150);
     //rect(pos.x, pos.y, w, h);
   }
 
@@ -55,6 +50,11 @@ class Cube {
     int line_spacement_h = (h-(this.padding*2)) / (nb_lines-1);
     int line_spacement_w = (w-(this.padding*2)) / (nb_lines-1);
     for ( int i=0; i<nb_lines; i++ ) {
+    noStroke();
+      colorMode(HSB, 100);
+      int sat = (int) map( mouseX, 0, width, 0, 100);
+      int hue = ( 255 / nb_lines ) * i;
+      fill(hue, sat, 100);
       if ( orientation == HORIZONTAL ) {
         if ( i%2 == 0 ) {
 
@@ -65,7 +65,8 @@ class Cube {
             int y1 = (int) pos.y + (line_spacement_h * i) + padding;
             int x2 = x1 + (padding*2);
             int y2 = y1;          
-            line(x1, y1, x2, y2);    
+            //line(x1, y1, x2, y2);    
+            rect(x1, y1, x2, y2);    
 
             break;
           }
@@ -74,14 +75,16 @@ class Cube {
           int y1 = (int) pos.y + (line_spacement_h * i) + padding;
           int x2 = x1;
           int y2 = y1 + line_spacement_h;        
-          line(x1, y1, x2, y2);
+          //line(x1, y1, x2, y2); 
+          rect(x1, y1, x2, y2);
         } else {
 
           int x1 = (int) pos.x + padding;
           int y1 = (int) pos.y + (line_spacement_h * i) + padding;
           int x2 = x1;
           int y2 = y1 + line_spacement_h;        
-          line(x1, y1, x2, y2);
+          //line(x1, y1, x2, y2); 
+          rect(x1, y1, x2, y2);
         }
       } else {
         if ( i%2 == 0 ) {
@@ -90,7 +93,8 @@ class Cube {
           int y1 = (int) pos.y + padding;
           int x2 = x1 + line_spacement_w;
           int y2 = y1;        
-          line(x1, y1, x2, y2);
+          //line(x1, y1, x2, y2); 
+          rect(x1, y1, x2, y2);
         } else {
 
           if ( i == nb_lines ) 
@@ -100,7 +104,8 @@ class Cube {
           int y1 = (int) pos.y + w - padding;
           int x2 = x1 + line_spacement_w;
           int y2 = y1;        
-          line(x1, y1, x2, y2);
+          //line(x1, y1, x2, y2); 
+          rect(x1, y1, x2, y2);
         }
       }
     }
@@ -112,18 +117,25 @@ class Cube {
     int line_spacement_h = (h-(this.padding*2)) / (nb_lines-1);
     int line_spacement_w = (w-(this.padding*2)) / (nb_lines-1);
     for ( int i=0; i<nb_lines; i++ ) {
+      colorMode(HSB, 100);
+      int h =  ( 255 / nb_lines ) * i;
+      int s = 75;
+      int b = 75;
+      stroke(h, s, b);
       if ( orientation == HORIZONTAL ) {
         int x1 = round(pos.x + padding);
         int y1 = round(pos.y + (line_spacement_h * i) + padding);
         int x2 = x1 + w - (padding*2);
         int y2 = y1;        
-        line(x1, y1, x2, y2);
+        //line(x1, y1, x2, y2); 
+        rect(x1, y1, x2, y2);
       } else {
         int x1 = round( pos.x + (line_spacement_w * i) + padding );
         int y1 = round( pos.y + padding );
         int x2 = x1;
         int y2 = y1 + h - (padding*2);        
-        line(x1, y1, x2, y2);
+        //line(x1, y1, x2, y2); 
+        rect(x1, y1, x2, y2);
       }
     }
   }
